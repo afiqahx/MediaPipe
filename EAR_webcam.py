@@ -84,15 +84,16 @@ with FaceLandmarker.create_from_options(options) as landmarker:
                 eye_state = "OPEN"
 
             cv2.putText(frame, f"Eye State: {eye_state}", (20, 140),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7,
-                        (0, 255, 0) if eye_state == "OPEN" else (0, 0, 255), 2)
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0) 
+                        if eye_state == "OPEN" else (0, 0, 255), 2)
             
             cv2.putText(frame, f"Duration: {closure_duration:.2f}s", (20, 175),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
-            
+                        
             cv2.putText(frame, f"Status: {status}", (20, 215),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.8,
-                        (0, 0, 255) if status == "MICROSLEEP ALERT" else (0, 255, 0), 2)
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255) 
+                        if status == "MICROSLEEP ALERT" else (0, 255, 0), 2)
+            
             print(f"State: {eye_state} | Duration: {closure_duration:.2f}s | Status: {status}")
         else:
             eye_closed_start = None
